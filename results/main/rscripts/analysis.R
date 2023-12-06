@@ -306,10 +306,10 @@ theme_set(theme_bw())
 
 #prior = get_prior(betaresponse ~ context + (1|cc),family = Beta(),data=t[t$expression == p,])
 
-# models with by-participant slope do not converge, even with 8000 iterations
+# no by-participant intercept because each participant saw each predicate only once
 for (p in predicates) {
   print(p)
-  betamodel = bf(betaresponse ~ context + (1|cc),
+  betamodel = bf(betaresponse ~ context + (1+context|cc),
                  phi ~ context + (1|cc), # beta distribution's precision 
                  family = Beta())
   assign(paste("m.b.", p, sep=""), brm(formula = betamodel,
