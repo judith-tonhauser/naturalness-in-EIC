@@ -1,5 +1,5 @@
 \newcommand{\noopsort}[1]{}\newcommand{\SortNoop}[1]{} \newcommand{\noop}[1]{}
-\begin{thebibliography}{47}
+\begin{thebibliography}{43}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[Abrus{\'a}n(2011)]{abrusan2011}
@@ -71,11 +71,6 @@ Degen, Judith and Judith Tonhauser. 2022.
 \newblock Are there factive predicates? {A}n empirical investigation.
 \newblock {\em Language\/} 98:552--591.
 
-\bibitem[Dj\"arv and Bacovcin(2020)]{djaerv-bacovcin2020}
-Dj\"arv, Kajsa and {Hezekiah Akiva} Bacovcin. 2020.
-\newblock Prosodic effects on factive presupposition projection.
-\newblock {\em Journal of Pragmatics\/} 169:61--85.
-
 \bibitem[Gazdar(1979)]{gazdar79a}
 Gazdar, Gerald. 1979.
 \newblock {\em Pragmatics: Implicature, Presuppositions, and Logical Form\/}.
@@ -126,21 +121,15 @@ Kiparsky, Paul and Carol Kiparsky. 1970.
 \newblock In M.~Bierwisch and K.~Heidolph, eds., {\em Progress in
   Linguistics\/}, pages 143--173. The Hague: Mouton.
 
+\bibitem[Klein(1975)]{klein1975}
+Klein, Ewan. 1975.
+\newblock Two sorts of factive predicates.
+\newblock Pragmatics Microfiche it 1.1. frames B5ÐC14.
+
 \bibitem[Lenth(2023)]{emmeans}
 Lenth, Russell~V. 2023.
 \newblock {\em emmeans: Estimated Marginal Means, aka Least-Squares Means\/}.
 \newblock R package version 1.8.8.
-
-\bibitem[Mahler(2020)]{mahler2020}
-Mahler, Taylor. 2020.
-\newblock The social component of projection behavior of clausal complements.
-\newblock {\em Linguistic Society of America\/} 5:777--791.
-
-\bibitem[Mahler(2022)]{mahler-thesis}
-Mahler, Taylor. 2022.
-\newblock {\em Social identity information in projection inferences: {A} case
-  study in social and semantic-pragmatic meaning\/}.
-\newblock Ph.D. thesis, The Ohio State University.
 
 \bibitem[Mandelkern et~al.(2020)Mandelkern, Zehr, Romoli, and
   Schwarz]{mandelkern-etal2020}
@@ -208,11 +197,6 @@ Smith, {E.\ Allyn} and Kathleen~Currie Hall. 2011.
 \newblock Projection diversity: {E}xperimental evidence.
 \newblock {\em 2011 {ESSLLI} Workshop on Projective Content.\/} pages 156--170.
 
-\bibitem[Tonhauser(2016)]{tonhauser-salt26}
-Tonhauser, Judith. 2016.
-\newblock Prosodic cues to speaker commitment.
-\newblock {\em Semantics and Linguistic Theory\/} 26:934--960.
-
 \bibitem[Tonhauser(2020)]{tonhauser-guarani-variability}
 Tonhauser, Judith. 2020.
 \newblock Projection variability in {P}araguayan {G}uaran\'i.
@@ -229,13 +213,6 @@ Tonhauser, Judith, David Beaver, and Judith Degen. 2018.
 Tonhauser, Judith, David Beaver, Craige Roberts, and Mandy Simons. 2013.
 \newblock Toward a taxonomy of projective content.
 \newblock {\em Language\/} 89:66--109.
-
-\bibitem[Tonhauser et~al.(2019)Tonhauser, de~Marneffe, Speer, and
-  Stevens]{tonhauser-etal-sub23}
-Tonhauser, Judith, Marie-Catherine de~Marneffe, {Shari R.} Speer, and Jon
-  Stevens. 2019.
-\newblock On the information structure sensitivity of projective content.
-\newblock {\em Sinn und Bedeutung\/} 23:363--389.
 
 \bibitem[van~der Sandt(1992)]{vds92}
 van~der Sandt, Rob. 1992.
