@@ -1,5 +1,5 @@
 \newcommand{\noopsort}[1]{}\newcommand{\SortNoop}[1]{} \newcommand{\noop}[1]{}
-\begin{thebibliography}{43}
+\begin{thebibliography}{44}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[Abrus{\'a}n(2011)]{abrusan2011}
@@ -195,6 +195,12 @@ Simons, Mandy, David Beaver, Craige Roberts, and Judith Tonhauser. 2017.
 Smith, {E.\ Allyn} and Kathleen~Currie Hall. 2011.
 \newblock Projection diversity: {E}xperimental evidence.
 \newblock {\em 2011 {ESSLLI} Workshop on Projective Content.\/} pages 156--170.
+
+\bibitem[Smithson and Verkuilen(2006)]{smithson-verkuilen2006}
+Smithson, Michael and Jay Verkuilen. 2006.
+\newblock A better lemon squeezer? {M}aximum-likelihood regression with
+  beta-distributed dependent variables.
+\newblock {\em Psychological Methods\/} 11:54--71.
 
 \bibitem[Tonhauser(2020)]{tonhauser-guarani-variability}
 Tonhauser, Judith. 2020.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  8 DEC 2023 08:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  8 DEC 2023 14:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1303,7 +1303,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [8 <../../results/main/graphs/explicit-ignorance-naturalness-by-predicate.pdf>]
 [9] [10] [11]
 <../../results/main/graphs/naturalness-by-context-and-predicate-with-stats.pdf,
- id=540, 650.43pt x 325.215pt>
+ id=545, 650.43pt x 325.215pt>
 File: ../../results/main/graphs/naturalness-by-context-and-predicate-with-stats
 .pdf Graphic file (type pdf)
 
@@ -1336,15 +1336,21 @@ Package rerunfilecheck Info: File `paper.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 621.
  ) 
 Here is how much of TeX's memory you used:
- 24647 strings out of 493014
- 421786 string characters out of 6133351
- 631315 words of memory out of 5000000
- 27464 multiletter control sequences out of 15000+600000
+ 24653 strings out of 493014
+ 421927 string characters out of 6133351
+ 632666 words of memory out of 5000000
+ 27467 multiletter control sequences out of 15000+600000
  50981 words of font info for 128 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
- 55i,12n,77p,3237b,532s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Hfootnote.13} has been referenced but does not ex
+ 55i,12n,77p,3237b,541s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{Hfootnote.15} has been referenced but does not ex
 ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.14} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.13} has been referenced but does not exis
+t, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.12} has been referenced but does not exis
 t, replaced by a fixed one
@@ -1391,10 +1397,10 @@ type1/public/txfonts/txtt.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/u
 rw/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/u
 tmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb
 >
-Output written on paper.pdf (21 pages, 698354 bytes).
+Output written on paper.pdf (21 pages, 699201 bytes).
 PDF statistics:
- 837 PDF objects out of 1000 (max. 8388607)
- 787 compressed objects within 8 object streams
- 174 named destinations out of 1000 (max. 500000)
+ 844 PDF objects out of 1000 (max. 8388607)
+ 794 compressed objects within 8 object streams
+ 177 named destinations out of 1000 (max. 500000)
  169 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,7 +1,7 @@
 # 13_explicitIgnorance
 # analysis.R
-# analysis 1: section 2.2.1
-# analysis 2: section 2.2.2
+# analysis 1: section 2.2.1 
+# analysis 2: section 2.2.2 
 # this script also creates the visual outputs of the analyses reported in the paper
 
 # set working directory to directory of script
@@ -40,11 +40,18 @@ t = t %>%
   mutate(expression = fct_relevel(expression, "continue"))
 levels(t$expression)
 
+# response distribution before transformation
+summary(t$response)
+# Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+# 0.0000  0.1000  0.6000  0.5065  0.8600  1.0000
+
 # first, because response assumes values of 0 and 1, which beta regression cannot handle, transform: (Smithson & Verkuilen 2006)
-# y'' = (y' ?? (n ??? 1) + 0.5)/n
+# y_new = (y_old * (n−1) + 0.5) / n (where n is the sample size)
 # note: first rescaling of y'=(y-a)/(b-a) not necessary because highest and lowest value are 0 and 1 already
 t$betaresponse = (t$response*(nrow(t)-1) + .5)/nrow(t)
 summary(t$betaresponse)
+# Min.   1st Qu.    Median      Mean   3rd Qu.      Max. 
+# 0.0000751 0.1000601 0.5999850 0.5064720 0.8599459 0.9999249 
 
 prior = get_prior(betaresponse ~ expression + (1|participantID) + (1|cc),family = Beta(),data=t)
 prior
