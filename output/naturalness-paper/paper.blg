@@ -5,37 +5,37 @@ The style file: cslipubs-natbib.bst
 Database file #1: bibliography.bib
 You've used 43 entries,
             2811 wiz_defined-function locations,
-            864 strings with 10452 characters,
-and the built_in function-call counts, 19706 in all, are:
-= -- 1925
-> -- 822
-< -- 43
-+ -- 288
-- -- 231
-* -- 1460
-:= -- 3560
+            865 strings with 10457 characters,
+and the built_in function-call counts, 19605 in all, are:
+= -- 1920
+> -- 804
+< -- 44
++ -- 282
+- -- 225
+* -- 1446
+:= -- 3540
 add.period$ -- 177
 call.type$ -- 43
-change.case$ -- 296
+change.case$ -- 294
 chr.to.int$ -- 43
 cite$ -- 43
 duplicate$ -- 864
-empty$ -- 1452
-format.name$ -- 298
-if$ -- 4041
+empty$ -- 1450
+format.name$ -- 294
+if$ -- 4023
 int.to.chr$ -- 1
 int.to.str$ -- 1
 missing$ -- 43
 newline$ -- 221
 num.names$ -- 176
-pop$ -- 234
+pop$ -- 232
 preamble$ -- 2
-purify$ -- 248
+purify$ -- 246
 quote$ -- 0
-skip$ -- 672
+skip$ -- 674
 stack$ -- 0
-substring$ -- 1231
-swap$ -- 172
+substring$ -- 1225
+swap$ -- 173
 text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
