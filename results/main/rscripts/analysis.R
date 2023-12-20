@@ -70,6 +70,11 @@ summary(m.b)
 
 saveRDS(m.b,file="../models/analysis1/beta-model-mixed1.rds")
 
+# run posterior predictive checks
+p1 <- pp_check(m.b, type = "dens_overlay_grouped", group = "expression", ndraws = 100) +
+  scale_x_continuous(breaks = seq(0,1,by=.25)) 
+p1
+
 # to load model
 m.b = readRDS(file="../models/analysis1/beta-model-mixed1.rds")
 
