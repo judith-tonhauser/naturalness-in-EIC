@@ -53,6 +53,7 @@ summary(t$betaresponse)
 # Min.   1st Qu.    Median      Mean   3rd Qu.      Max. 
 # 0.0000751 0.1000601 0.5999850 0.5064720 0.8599459 0.9999249 
 
+# fit the model
 prior = get_prior(betaresponse ~ expression + (1|participantID) + (1|cc),family = Beta(),data=t)
 prior
 
@@ -66,8 +67,10 @@ m.b = brm(formula = betamodel,
           cores = 4, iter = 3000, warmup = 500,
           control = list(adapt_delta = .95,max_treedepth=15))
 
+# model summary
 summary(m.b)
 
+# save the model
 saveRDS(m.b,file="../models/analysis1/beta-model-mixed1.rds")
 
 # run posterior predictive checks
@@ -75,7 +78,7 @@ p1 <- pp_check(m.b, type = "dens_overlay_grouped", group = "expression", ndraws 
   scale_x_continuous(breaks = seq(0,1,by=.25)) 
 p1
 
-# to load model
+# load the model
 m.b = readRDS(file="../models/analysis1/beta-model-mixed1.rds")
 
 # draws of posterior distributions of estimated marginal means of pairwise differences
@@ -91,7 +94,10 @@ pairwise <- m.b %>%
   mutate(contrast = fct_reorder(as.factor(contrast),.value))
 pairwise
 
+# save the pairwise comparison
 write_csv(pairwise,file="../models/analysis1/pairwise1.csv")
+
+# load the pairwise comparison
 pairwise = read_csv(file="../models/analysis1/pairwise1.csv")
 pairwise
 
@@ -105,7 +111,7 @@ pairwise_reduced = pairwise %>%
   select(c(contrast, .value, .lower, .upper))
 pairwise_reduced
 
-#### full model output  ----
+#### full model output for online supplement ----
 
 tableApp1 = print(xtable(pairwise_reduced),
                #only.contents = T,
@@ -120,21 +126,12 @@ tableApp1 = print(xtable(pairwise_reduced),
                comment = F
 )
 
+# write the table, print in latex document in supplement
 write(tableApp1, "../models/analysis1/fullModelOutput/analysis1.tex")
-       
-# #### plot of model output in Appendix
-# theme_set(theme_bw())   
-# ggplot(pairwise, aes(x = .value, y = contrast)) +
-#   geom_point() +
-#   geom_linerange(aes(xmin = .lower, xmax = .upper)) +
-#   geom_vline(xintercept = 0, color = "red") +
-#   labs(x = "Average marginal effect of expression", y = NULL) +
-#   facet_wrap(. ~ first, scales = "free_y", ncol = 5, drop = TRUE)
-# ggsave("../graphs/comparisons-in-EIC.pdf",height=13,width=20)
 
-#### create latex input for Table 1 ----
+#### create latex input for Table 1 in paper ----
 
-# select needed columns
+# select needed columns from the pairwise comparison for the table input
 tableInput = pairwise %>%
   select(c(contrast, .value, .lower, .upper, first, second)) %>%
   select(-c(contrast))
@@ -148,12 +145,14 @@ predicates <- replace(predicates, 9, "be.annoyed")
 predicates <- replace(predicates, 14, "be.right") 
 predicates
 
+# make tableInput a dataframe
 tableInput <- as.data.frame(tableInput)
 tableInput = tableInput %>%
   mutate(first = recode(first,"be annoyed" = "be.annoyed","be right" = "be.right")) %>%
   mutate(second = recode(second,"be annoyed" = "be.annoyed","be right" = "be.right"))
 tableInput
 
+# create a separate dataframe for each predicate
 for (p in predicates) {
   assign(paste("data.", p, sep=""), subset(tableInput, tableInput$first == p | tableInput$second == p))
   assign(paste("data.", p, sep=""), get(paste("data.", p, sep="")) %>% mutate(expression = c(p)))
@@ -162,9 +161,11 @@ for (p in predicates) {
 
 # change dataframes such that value, lower and upper is consistent by expression in first position
 
+# create a tableData dataframe
 tableData = data.frame(expression = character(), comparisonExpression = character(), value = numeric(), lower = numeric(), upper = numeric())
 tableData
 
+# fill tableData with the relevant information from the individual predicates' dataframes
 for (p in predicates) {
   for (i in 1:nrow(get(paste("data.",p,sep="")))) {
     print(p)
@@ -188,6 +189,8 @@ for (p in predicates) {
 tableData
 
 # sort dataframe by expression mean naturalness rating in explicit ignorance context
+
+# get the mean naturalness for each predicate (tmp dataframe)
 tmp = t %>%
   filter(context == "explicitIgnorance") %>%
   group_by(expression) %>%
@@ -205,6 +208,7 @@ tableData$expression = factor(tableData$expression, ordered = FALSE )
 str(tableData$expression)
 str(tmp$expression)
 
+# join the tmp dataframe with tableData
 tableData = left_join(tableData, tmp)
 tableData
 
@@ -267,6 +271,7 @@ tableData = tableData %>%
 
 #view(tableData)
 
+# now create the table to include in the paper
 table1 = print(xtable(tableData),
                only.contents = T,
                include.rownames=FALSE,
@@ -316,7 +321,7 @@ t = t %>%
   
 theme_set(theme_bw()) 
 
-#prior = get_prior(betaresponse ~ context + (1|cc),family = Beta(),data=t[t$expression == p,])
+#prior = get_prior(betaresponse ~ context + (1+context|cc),family = Beta(),data=t[t$expression == p,])
 
 # no by-participant intercept because each participant saw each predicate only once
 for (p in predicates) {
@@ -327,10 +332,14 @@ for (p in predicates) {
   assign(paste("m.b.", p, sep=""), brm(formula = betamodel,
                                 family=Beta(),
                                 data=t[t$expression == p,], 
-                                cores = 4, iter = 4000, warmup = 500,
+                                cores = 4, iter = 4000, warmup = 700,
                                 control = list(adapt_delta = .95,max_treedepth=15)))
   print(paste("m.b.", p, sep=""))
   saveRDS(paste("m.b.",p,sep=""),file=paste("../models/analysis2/beta-model-mixed-",p,".rds",sep=""))
+}
+
+
+for (p in predicates) {
   assign(paste("pairwise.",p,sep=""), get(paste("m.b.",p,sep="")) %>%
     emmeans(~ context) %>%
     contrast(method = "pairwise") %>%

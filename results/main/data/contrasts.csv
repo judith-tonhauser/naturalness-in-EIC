@@ -7,11 +7,11 @@ confess,explicitIgnorance - factL,6,factL,1,2,-0.05,-0.05
 confess,factL - factH,6,factH,2,3,-0.1,-0.1
 confirm,explicitIgnorance - factH,6,explicitIgnorance,1,3,-0.15,-0.15
 confirm,explicitIgnorance - factL,6,factL,1,2,-0.05,-0.05
-confirm,factL - factH,6,factH,2,3,-0.1,-0.1
+confirm,factL - factH,0,factH,2,3,-0.1,-0.1
 announce,explicitIgnorance - factH,0,explicitIgnorance,1,3,-0.15,-0.15
 announce,explicitIgnorance - factL,6,factL,1,2,-0.05,-0.05
 announce,factL - factH,6,factH,2,3,-0.1,-0.1
-see,explicitIgnorance - factH,3,explicitIgnorance,1,3,-0.15,-0.15
+see,explicitIgnorance - factH,0,explicitIgnorance,1,3,-0.15,-0.15
 see,explicitIgnorance - factL,6,factL,1,2,-0.05,-0.05
 see,factL - factH,6,factH,2,3,-0.1,-0.1
 discover,explicitIgnorance - factH,3,explicitIgnorance,1,3,-0.15,-0.15
@@ -54,8 +54,8 @@ reveal,explicitIgnorance - factH,0,explicitIgnorance,1,3,-0.15,-0.15
 reveal,explicitIgnorance - factL,6,factL,1,2,-0.05,-0.05
 reveal,factL - factH,6,factH,2,3,-0.1,-0.1
 suggest,explicitIgnorance - factH,6,explicitIgnorance,1,3,-0.15,-0.15
-suggest,explicitIgnorance - factL,6,factL,1,2,-0.05,-0.05
-suggest,factL - factH,6,factH,2,3,-0.1,-0.1
-pretend,explicitIgnorance - factH,3,explicitIgnorance,1,3,-0.15,-0.15
+suggest,explicitIgnorance - factL,1,factL,1,2,-0.05,-0.05
+suggest,factL - factH,0,factH,2,3,-0.1,-0.1
+pretend,explicitIgnorance - factH,6,explicitIgnorance,1,3,-0.15,-0.15
 pretend,explicitIgnorance - factL,6,factL,1,2,-0.05,-0.05
 pretend,factL - factH,0,factH,2,3,-0.1,-0.1
