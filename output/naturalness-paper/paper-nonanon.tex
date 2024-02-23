@@ -116,7 +116,7 @@
 \begin{document}
 
 \maketitle
-\thispagestyle{empty}
+%\thispagestyle{empty}
 
 \begin{abstract}
 
@@ -129,54 +129,9 @@ Presuppositions are taken to typically project out of entailment-canceling envir
 \noindent
 {\bf Keywords:} Presuppositions, categorical vs.\ gradient projection, inference ratings, naturalness ratings in explicit ignorance contexts. 
 
-\bigskip
+%\clearpage
+%\pagenumbering{arabic}	
 
-\noindent
-{\bf Acknowledgments:} 
-
-\noindent
-For helpful comments on this project we thank Craige Roberts, Gregory Scontras, Mandy Simons, and the audience at the syntax/semantics discussion group at the University of Stuttgart.
-
-\bigskip
-
-\noindent
-{\bf Funding:} The experiment was funded by Judith Tonhauser's research funds.
-
-\bigskip
-
-\noindent
-{\bf Competing interests:} The authors have no competing interests to declare.
-
-\bigskip
-
-\noindent
-{\bf Ethics approval and informed consent:} The experiment was approved by the ethics review committee of the University of Stuttgart. Informed consent was obtained from the participants.
-
-\bigskip
-
-\noindent
-{\bf Availability of materials, data, and code:} See footnote \ref{f:github}.
-
-\bigskip
-
-\noindent
-{\bf Author contributions:} Both authors contributed to the conception and design of the experiment. Material preparation, data collection and analysis were performed by both authors. The first draft of the manuscript was written by Judith Tonhauser. Both authors commented on previous versions of the manuscript. Both authors read and approved the final manuscript.
-
-\newpage
-
-\clearpage
-\pagenumbering{arabic}	
-
-\begin{center}
-{\LARGE I don't know if projection is categorical. \\[.2cm] Did \citealt{mandelkern-etal2020} discover that it is?}	
-\end{center}
-
-\begin{abstract}
-
-Presuppositions are taken to typically project out of entailment-canceling environments like the scope of negation (e.g., \citealt{ccmg90}). While projection is often characterized as categorical (that is, content either typically projects or not), there is mounting empirical evidence that projection is gradient, with content being more or less projective (e.g., \citealt{karttunen71b,xue-onea11,demarneffe-etal-sub23,tbd-variability,degen-tonhauser-language}). \citealt{mandelkern-etal2020} critically evaluated the inference rating measures on which this empirical evidence is based and claimed that a different measure, namely naturalness ratings in explicit ignorance contexts, provides support for categorical projection and distinguishes presuppositions from nonpresuppositions. This paper presents the results of an experiment designed to investigate \citepos{mandelkern-etal2020} claim for factive predicates (presumed presupposition triggers) and nonfactive ones (nontriggers). The results do not support \citepos{mandelkern-etal2020} claim and rather align with \citepos{degen-tonhauser-language} result that there is no evidence for a categorical distinction between factive and nonfactive predicates. 
-
-\end{abstract}
-		
 \section{Introduction}\label{s1}
 
 Presuppositions are often characterized as backgrounded content that typically projects out of entailment-canceling environments, like the scope of negation or a polar interrogative (e.g., \citealt{ccmg90}).\footnote{Conventional implicatures also project out of these environments. They differ from presuppositions in that they contribute novel information. For discussion see, e.g., \citealt{ccmg90} and \citealt{potts05}.} Thus, a content like the content of the clausal complement (CC) of {\em know} in (\ref{first}a) is taken to be a presupposition because a speaker who utters (\ref{first}a) is typically taken to believe the CC, that Julian dances salsa, even though the CC occurs in a polar interrogative. By contrast, the CC of {\em think} in (\ref{first}b) is not assumed to be a presupposition because it does not typically project. Accordingly, {\em know} is analyzed as a presupposition trigger, but {\em think} is not.
@@ -349,7 +304,7 @@ We first address the question of whether naturalness ratings in explicit ignoran
 \caption{Mean naturalness rating in explicit ignorance context by expression (\color{orange}factive\color{black}, \color{green}nonfactive\color{green}, \color{black}filler\color{black}). Error bars indicate 95\% bootstrapped confidence intervals. Overlaid violin plots indicate the kernel probability density of the participants' ratings.}\label{fig:acc-by-expression}
 \end{figure}
 
-These observations were confirmed by a posthoc pairwise comparison of the estimated means for each control and target expression in the explicit ignorance context using the `emmeans' package (\citealt{emmeans}) in R (\citealt{r}). The input to the pairwise comparison was a mixed-effects beta regression model with weakly informative priors that was fit using the `brms' package (\citealt{buerkner2017}). The model predicted naturalness ratings\footnote{\label{fn:transform}To model the ratings using a beta regression, the ratings were first transformed from the interval [0,1] to the interval (0,1) using the method proposed in \citealt{smithson-verkuilen2006}.} from a fixed effect of expression (with treatment coding and `continue' as reference level) and included random by-participant and by-item intercepts (where an item is a complement clause). The output of the pairwise comparison were 95\% highest density intervals (HDIs) of estimated marginal mean differences between each of the expressions. We assume that two expressions differ in their naturalness in the explicit ignorance context if their HDI does not include 0.
+These observations were confirmed by a posthoc pairwise comparison of the estimated means for each control and target expression in the explicit ignorance context using the `emmeans' package (\citealt{emmeans}) in R (\citealt{r}). The input to the pairwise comparison was a Bayesian mixed-effects beta regression model with weakly informative priors that was fit using the `brms' package (\citealt{buerkner2017}). The model predicted naturalness ratings\footnote{\label{fn:transform}To model the ratings using a beta regression, the ratings were first transformed from the interval [0,1] to the interval (0,1) using the method proposed in \citealt{smithson-verkuilen2006}.} from a fixed effect of expression (with treatment coding and `continue' as reference level) and included random by-participant and by-item intercepts (where an item is a complement clause). The output of the pairwise comparison were 95\% highest density intervals (HDIs) of estimated marginal mean differences between each of the expressions. We assume that two expressions differ in their naturalness in the explicit ignorance context if their HDI does not include 0.
 
 As shown in Table \ref{t:pairwise},\footnote{While the naturalness ratings collected from the participants range from 0 to 1, the greater than $|$1$|$  estimated marginal mean differences are the result of the beta regression using a logit link function for the mean parameter. The full model output is available here: \url{https://anonymous.4open.science/r/naturalness-in-EIC-5847/results/main/models/analysis1/fullModelOutput/fullModelOutput.pdf}.} the pairwise comparison suggests differences between the naturalness ratings of the CCs of the five factive predicates: The ratings of {\em be annoyed} are lower than those of {\em know}, which in turn are lower than those of {\em see} and {\em discover}, which in turn are lower than those of {\em reveal}. There is also variation between the factive predicates and the presuppositional controls: While all five factive predicates are more natural in explicit ignorance contexts than {\em continue, too} and {\em also}, {\em know} is additionally more natural than {\em again} and {\em stop}, and {\em see, discover} and {\em reveal} are additionally more natural than the {\em it-}cleft. Finally, the naturalness ratings in explicit ignorance contexts for {\em see} and {\em discover} do not differ from those of the nonfactives {\em confess, inform}, and {\em acknowledge}, and those of {\em reveal} do not differ from those of the nonfactives {\em admit, hear}, and {\em prove}. These results suggest that naturalness ratings in explicit ignorance contexts do not provide empirical support for categorical projection or for a categorical distinction between factive and nonfactive predicates. 
 
