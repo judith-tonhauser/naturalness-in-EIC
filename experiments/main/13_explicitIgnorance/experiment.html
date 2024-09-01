@@ -1491,7 +1491,7 @@ for (var j=0; j<control_items.length; j++) {
 //  exp.stims_block2.push(jQuery.extend(true, {}, stim)); 
   } 
 
-console.log(items)  
+// console.log(items)  
   
 
 // this function takes an item as an argument and builds the stimulus to be displayed
@@ -1516,7 +1516,7 @@ var stimuli = stimuli.map(createKey);
 
 stimuli = stimuli.map(() => ({ }));
 
-// console.log(stimuli)
+console.log(stimuli)
 
 // loop through the items to turn them into stimuli that can be displayed
 for (let i = 0; i < items.length; i++) {
@@ -1524,7 +1524,7 @@ for (let i = 0; i < items.length; i++) {
 } 
 
 // console.log(stimuli)
-
+// 
 
 /* add the control stimuli to the stimuli */
 // stimuli = stimuli.concat(control_stimuli);
